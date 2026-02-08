@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+textarea { width: 100%; resize: vertical; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h2>Drabina – obliczenia</h2>
+
+Wysokość D: <input type="text" id="D_mor"><br><br>
+Odległość X: <input type="text" id="X_mor"><br><br>
+
+<button onclick="licz_mor()">Oblicz</button>
+
+<p id="wynik1"></p>
+<p id="wynik2"></p>
+
+<h3>Kod JavaScript:</h3>
+<textarea name="zadanie23KOD_mor" rows="18" cols="80" readonly>
+function dlugosc_mor(D,X){
+    return Math.sqrt(D*D + X*X);
+}
+
+function kat_mor(D,X){
+    return Math.atan(D/X) * 180 / Math.PI;
+}
+
+function licz_mor(){
+    var D = parseFloat(document.getElementById("D_mor").value);
+    var X = parseFloat(document.getElementById("X_mor").value);
+
+    document.getElementById("wynik1").innerHTML =
+        "Długość drabiny = " + dlugosc_mor(D,X).toFixed(2) + " m";
+
+    document.getElementById("wynik2").innerHTML =
+        "Kąt nachylenia = " + kat_mor(D,X).toFixed(2) + "°";
+}
+</textarea>
+
+</body>
+</html>

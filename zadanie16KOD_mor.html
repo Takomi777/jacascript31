@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head><meta charset="utf-8"><title>Zadanie 16 - KOD</title></head>
+<body>
+<h2>Zadanie 16 - KOD (Morawski)</h2>
+<textarea cols="80" rows="16" readonly>
+// Obliczanie (A+B)^3 i rozwinięcie wzoru
+var A = parseInt(prompt('Podaj A','1'),10);
+var B = parseInt(prompt('Podaj B','2'),10);
+var left = Math.pow(A+B,3);
+var term1 = Math.pow(A,3);
+var term2 = 3 * Math.pow(A,2) * B;
+var term3 = 3 * A * Math.pow(B,2);
+var term4 = Math.pow(B,3);
+var sum = term1 + term2 + term3 + term4;
+document.write('(' + A + ' + ' + B + ')^3 = ' + sum);
+</textarea>
+</body>
+</html>

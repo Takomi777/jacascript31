@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head><meta charset="utf-8"><title>Zadanie 11 - Morawski</title></head>
+<body>
+<h2>Zadanie 11 - Morawski</h2>
+<script>
+var D1 = parseInt(prompt("Podaj D1 (dzień stycznia)", "30"), 10);
+var D2 = parseInt(prompt("Podaj D2 (dzień stycznia)", "28"), 10);
+var diffDays = D1 - D2;
+var seconds = diffDays * 24 * 3600;
+document.write('<div style="color:green;font-size:48px;">');
+document.write('D1=' + D1 + ' D2=' + D2 + '<br>');
+document.write('Ilość sekund = ' + seconds + ' sekund');
+document.write('</div>');
+</script>
+</body>
+</html>

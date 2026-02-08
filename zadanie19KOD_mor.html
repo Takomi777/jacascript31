@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Zadanie 19 – Morawski</title>
+  <style>
+    body{font-family:Arial;margin:20px;}
+    label{display:inline-block;width:130px;}
+    #nazwa{margin-top:14px;color:blue;font-size:20px;}
+    textarea { width: 100%; resize: vertical; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Zadanie 19 — Pole i obwód kwadratu (Morawski)</h1>
+
+  <label>Podaj długość boku (cm):</label>
+  <input id="dlugosc" type="text" value="5"> cm<br><br>
+
+  <input type="button" value="Oblicz pole" onclick="pole_mor()">
+  <input type="button" value="Oblicz obwód" onclick="obwod_mor()">
+  <input type="button" value="Oblicz oba" onclick="pole_i_obwod_mor()">
+
+  <div id="nazwa"></div>
+
+  <h3>Kod JavaScript:</h3>
+  <textarea name="zadanie19KOD_mor" rows="25" cols="80" readonly>
+function pole_mor(){
+  var a = parseFloat(document.getElementById('dlugosc').value);
+  var el = document.getElementById('nazwa');
+  if(isNaN(a)){
+    el.innerHTML = '<span style="color:red">Błąd: podaj liczbę.</span>';
+    return;
+  }
+  var b = a * a;
+  el.innerHTML = "Pole kwadratu = " + b.toFixed(2) + " cm²";
+}
+
+function obwod_mor(){
+  var a = parseFloat(document.getElementById('dlugosc').value);
+  var el = document.getElementById('nazwa');
+  if(isNaN(a)){
+    el.innerHTML = '<span style="color:red">Błąd: podaj liczbę.</span>';
+    return;
+  }
+  var b = 4 * a;
+  el.innerHTML = "Obwód kwadratu = " + b.toFixed(2) + " cm";
+}
+
+function pole_i_obwod_mor(){
+  var a = parseFloat(document.getElementById('dlugosc').value);
+  var el = document.getElementById('nazwa');
+  if(isNaN(a)){
+    el.innerHTML = '<span style="color:red">Błąd: podaj liczbę.</span>';
+    return;
+  }
+  var pole = a*a;
+  var obwod = 4*a;
+  el.innerHTML = "Pole = " + pole.toFixed(2) + " cm² <br> Obwód = " + obwod.toFixed(2) + " cm";
+}
+  </textarea>
+</body>
+</html>

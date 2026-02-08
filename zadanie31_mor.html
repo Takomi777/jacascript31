@@ -1,0 +1,45 @@
+<html>
+<head>
+<script type="text/javascript">
+
+var dom = {
+    liczba_pokoi: '4',
+    material: 'cegla',
+    liczba_mieszkancow: '5',
+    dom_pokaz_morawski: function ()
+    {
+        document.write(
+            this.liczba_pokoi + ' ' +
+            this.material + ' ' +
+            this.liczba_mieszkancow + '<br>'
+        );
+    }
+}
+
+dom.dom_pokaz_morawski();
+
+dom.rok_budowy = 2005;
+
+dom.dom_wypisz_morawski = function ()
+{
+    alert('Rok budowy: ' + this.rok_budowy);
+}
+
+dom.dom_wypisz_morawski();
+
+</script>
+</head>
+
+<body>
+<br>
+Programowanie obiektowe <br>
+Obiekt: dom <br>
+Pola: <br>
+- liczba pokoi <br>
+- materiał <br>
+- liczba mieszkańców <br>
+Metoda: dom_pokaz_morawski <br>
+Nowe pole: rok budowy <br>
+Nowa metoda: dom_wypisz_morawski <br>
+</body>
+</html>

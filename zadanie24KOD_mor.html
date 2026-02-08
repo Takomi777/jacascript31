@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+textarea { width: 100%; resize: vertical; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h3>Kod JavaScript:</h3>
+<textarea name="zadanie24KOD_mor" rows="22" cols="80" readonly>
+var x1_mor = parseFloat(prompt("x1=",""));
+var x2_mor = parseFloat(prompt("x2=",""));
+
+document.write("wczytane liczby: x1="+x1_mor+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x2="+x2_mor+"<br><br>");
+
+var y1 = Math.pow(x1_mor,3);
+var y2 = Math.sqrt(x2_mor);
+var y3 = Math.abs(x1_mor - x2_mor);
+
+document.write("x1^3 = "+y1.toFixed(2)+"<br>");
+document.write("sqrt(x2) = "+y2.toFixed(2)+"<br>");
+document.write("|x1 - x2| = "+y3.toFixed(2)+"<br><br>");
+
+var rad = (x1_mor * Math.PI) / 180;
+
+document.write("Stopnie: "+x1_mor+" [st] <br>");
+document.write("Radiany: "+rad.toFixed(2)+" [rad]<br><br>");
+
+document.write("sin = "+Math.sin(rad).toFixed(2)+"<br>");
+document.write("cos = "+Math.cos(rad).toFixed(2)+"<br>");
+document.write("tan = "+Math.tan(rad).toFixed(2)+"<br>");
+</textarea>
+
+<script>
+// Oryginalny kod JS z pliku, uruchamiający okienka prompt.
+// UWAGA: Użycie document.write() zastąpi całą stronę.
+// Zostawiam ten fragment na końcu, aby nie zakłócał widoku textarea.
+
+var x1_mor = parseFloat(prompt("x1=",""));
+var x2_mor = parseFloat(prompt("x2=",""));
+
+document.write("wczytane liczby: x1="+x1_mor+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; x2="+x2_mor+"<br><br>");
+
+var y1 = Math.pow(x1_mor,3);
+var y2 = Math.sqrt(x2_mor);
+var y3 = Math.abs(x1_mor - x2_mor);
+
+document.write("x1^3 = "+y1.toFixed(2)+"<br>");
+document.write("sqrt(x2) = "+y2.toFixed(2)+"<br>");
+document.write("|x1 - x2| = "+y3.toFixed(2)+"<br><br>");
+
+var rad = (x1_mor * Math.PI) / 180;
+
+document.write("Stopnie: "+x1_mor+" [st] <br>");
+document.write("Radiany: "+rad.toFixed(2)+" [rad]<br><br>");
+
+document.write("sin = "+Math.sin(rad).toFixed(2)+"<br>");
+document.write("cos = "+Math.cos(rad).toFixed(2)+"<br>");
+document.write("tan = "+Math.tan(rad).toFixed(2)+"<br>");
+</script>
+
+</body>
+</html>

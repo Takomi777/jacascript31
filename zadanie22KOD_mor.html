@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+textarea { width: 100%; resize: vertical; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h2>Prostokąt – obliczenia</h2>
+
+A: <input type="text" id="a_dana_mor"><br><br>
+B: <input type="text" id="b_dana_mor"><br><br>
+
+<button onclick="pole_mor()">Oblicz pole</button>
+<button onclick="obwod_mor()">Oblicz obwód</button>
+
+<table border="1" style="margin-top:20px;">
+<tr>
+<td>Pole:</td>
+<td><input type="text" id="wyprowadz_pole_mor"></td>
+</tr>
+<tr>
+<td>Obwód:</td>
+<td><input type="text" id="wyprowadz_obwod_mor"></td>
+</tr>
+</table>
+
+<h3>Kod JavaScript:</h3>
+<textarea name="zadanie22KOD_mor" rows="20" cols="80" readonly>
+function Pole_morawski(a_mor,b_mor){
+    return a_mor*b_mor;
+}
+
+function obwod_morawski(a_mor,b_mor){
+    return 2*a_mor + 2*b_mor;
+}
+
+function pole_mor(){
+    var a = parseFloat(document.getElementById("a_dana_mor").value);
+    var b = parseFloat(document.getElementById("b_dana_mor").value);
+    document.getElementById("wyprowadz_pole_mor").value =
+        Pole_morawski(a,b).toFixed(2);
+}
+
+function obwod_mor(){
+    var a = parseFloat(document.getElementById("a_dana_mor").value);
+    var b = parseFloat(document.getElementById("b_dana_mor").value);
+    document.getElementById("wyprowadz_obwod_mor").value =
+        obwod_morawski(a,b).toFixed(2);
+}
+</textarea>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Obliczanie V i Pc walca – Morawski</title>
+<style>
+textarea { width: 100%; resize: vertical; margin-top: 10px; }
+</style>
+
+</head>
+
+<body>
+<h2>Obliczanie V i Pc walca – Morawski</h2>
+<br>
+
+<form name="formularz" action="..."
+onsubmit="V_mor(this.promien.value, this.wysokosc.value);
+Pc_mor(this.promien.value, this.wysokosc.value); return false">
+
+Podaj r =
+<input size="6" name="promien">
+
+Podaj h =
+<input size="6" name="wysokosc">
+
+<br><br>
+
+<input type="submit" value="Oblicz">
+
+<br><br>
+
+V =
+<input size="6" name="obj">
+
+Pc =
+<input size="6" name="pole">
+
+</form>
+
+<table>
+<tr id="pokaz1"></tr>
+<tr id="pokaz2"></tr>
+</table>
+
+<h3>Kod JavaScript:</h3>
+<textarea name="zadanie21KOD_mor" rows="25" cols="80" readonly>
+function V_mor(r, h)
+{
+    let r_liczba = parseFloat(r);
+    let h_liczba = parseFloat(h);
+
+    let V_wynik = Math.PI * r_liczba * r_liczba * h_liczba;
+
+    document.getElementsByName('obj')[0].value = V_wynik.toFixed(2); 
+    alert("V = " + V_wynik.toFixed(2) + " cm³"); 
+    pokaz1.innerHTML = "V = " + V_wynik.toFixed(2) + " cm³<br>";
+}
+
+function Pc_mor(r, h)
+{
+    let r_liczba = parseFloat(r);
+    let h_liczba = parseFloat(h);
+
+    let Pc_wynik = 2 * Math.PI * r_liczba * r_liczba + 2 * Math.PI * r_liczba * h_liczba;
+
+    document.getElementsByName('pole')[0].value = Pc_wynik.toFixed(2);
+    alert("Pc = " + Pc_wynik.toFixed(2) + " cm²");
+    pokaz2.innerHTML = "Pc = " + Pc_wynik.toFixed(2) + " cm²";
+}
+</textarea>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 20 – Morawski</title>
+<style>
+body { font-family: Arial; margin: 20px; }
+label { display: inline-block; width: 60px; }
+#wynik { margin-top: 20px; font-size: 20px; color: blue; font-weight: bold; }
+textarea { width: 100%; resize: vertical; margin-top: 10px; }
+</style>
+</head>
+
+<body>
+<h2>Zadanie 20 – Obliczanie długości odcinków AB, BC i AC (Morawski)</h2>
+
+<h3>Punkt A:</h3>
+<label>xA:</label> <input id="Ax" type="text"><br>
+<label>yA:</label> <input id="Ay" type="text"><br><br>
+
+<h3>Punkt B:</h3>
+<label>xB:</label> <input id="Bx" type="text"><br>
+<label>yB:</label> <input id="By" type="text"><br><br>
+
+<h3>Punkt C:</h3>
+<label>xC:</label> <input id="Cx" type="text"><br>
+<label>yC:</label> <input id="Cy" type="text"><br><br>
+
+<button onclick="AB_mor()">Oblicz AB</button>
+<button onclick="BC_mor()">Oblicz BC</button>
+<button onclick="AC_mor()">Oblicz AC</button>
+
+<div id="wynik"></div>
+
+<h3>Kod JavaScript:</h3>
+<textarea name="zadanie20KOD_mor" rows="40" cols="80" readonly>
+function AB_mor() {
+    let Ax = parseFloat(document.getElementById('Ax').value);
+    let Ay = parseFloat(document.getElementById('Ay').value);
+    let Bx = parseFloat(document.getElementById('Bx').value);
+    let By = parseFloat(document.getElementById('By').value);
+
+    if (isNaN(Ax) || isNaN(Ay) || isNaN(Bx) || isNaN(By)) {
+        document.getElementById('wynik').innerHTML = "Błąd: wpisz liczby!";
+        return;
+    }
+
+    let AB = Math.sqrt((Bx - Ax)**2 + (By - Ay)**2);
+    document.getElementById('wynik').innerHTML = "Długość AB = " + AB.toFixed(2);
+}
+
+function BC_mor() {
+    let Bx = parseFloat(document.getElementById('Bx').value);
+    let By = parseFloat(document.getElementById('By').value);
+    let Cx = parseFloat(document.getElementById('Cx').value);
+    let Cy = parseFloat(document.getElementById('Cy').value);
+
+    if (isNaN(Bx) || isNaN(By) || isNaN(Cx) || isNaN(Cy)) {
+        document.getElementById('wynik').innerHTML = "Błąd: wpisz liczby!";
+        return;
+    }
+
+    let BC = Math.sqrt((Cx - Bx)**2 + (Cy - By)**2);
+    document.getElementById('wynik').innerHTML = "Długość BC = " + BC.toFixed(2);
+}
+
+function AC_mor() {
+    let Ax = parseFloat(document.getElementById('Ax').value);
+    let Ay = parseFloat(document.getElementById('Ay').value);
+    let Cx = parseFloat(document.getElementById('Cx').value);
+    let Cy = parseFloat(document.getElementById('Cy').value);
+
+    if (isNaN(Ax) || isNaN(Ay) || isNaN(Cx) || isNaN(Cy)) {
+        document.getElementById('wynik').innerHTML = "Błąd: wpisz liczby!";
+        return;
+    }
+
+    let AC = Math.sqrt((Cx - Ax)**2 + (Cy - Ay)**2);
+    document.getElementById('wynik').innerHTML = "Długość AC = " + AC.toFixed(2);
+}
+</textarea>
+
+</body>
+</html>

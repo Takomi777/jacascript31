@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <title>Zadanie 18 – Morawski</title>
+  <style>
+    body{font-family:Arial;margin:20px;}
+    label{display:inline-block;width:80px;}
+    .out{margin-top:12px;font-weight:600;}
+    textarea { width: 100%; resize: vertical; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Zadanie 18 — Definiowanie i użycie funkcji (Morawski)</h1>
+
+  <label>a =</label><input id="a_val" type="text" value="3"><br><br>
+  <label>b =</label><input id="b_val" type="text" value="4"><br><br>
+
+  <button onclick="runAll()">Uruchom wszystkie funkcje</button>
+  <button onclick="clearOut()">Wyczyść</button>
+
+  <div class="out" id="out"></div>
+
+  <h3>Kod JavaScript:</h3>
+  <textarea name="zadanie18KOD_mor" rows="30" cols="80" readonly>
+/* Funkcje – nazwy z Twoim nazwiskiem */
+function suma_mor(a,b){ return a + b; }
+function odejmowanie_mor(a,b){ return a - b; }
+function mnozenie_mor(a,b){ return a * b; }
+/* od_kwadratu_mor zwraca tablicę albo tekst z kwadratami */
+function od_kwadratu_mor(a,b){
+  return { a2: a*a, b2: b*b };
+}
+function reszta_z_dzielenia_a_przez_b_mor(a,b){
+  if(b === 0) return NaN;
+  return a % b;
+}
+
+/* Pomocnicza funkcja do uruchomienia wszystkiego i wyświetlenia wyników */
+function runAll(){
+  var a_raw = document.getElementById('a_val').value;
+  var b_raw = document.getElementById('b_val').value;
+
+  var a = parseFloat(a_raw);
+  var b = parseFloat(b_raw);
+
+  var el = document.getElementById('out');
+  if(isNaN(a) || isNaN(b)){
+    el.innerHTML = '<span style="color:red">Błąd: podaj poprawne liczby dla a i b.</span>';
+    return;
+  }
+
+  var s = suma_mor(a,b);
+  var r = odejmowanie_mor(a,b);
+  var m = mnozenie_mor(a,b);
+  var k = od_kwadratu_mor(a,b);
+  var mod = reszta_z_dzielenia_a_przez_b_mor(a,b);
+
+  var html = '';
+  html += '<div>suma = ' + s + '</div>';
+  html += '<div>różnica = ' + r + '</div>';
+  html += '<div>iloczyn = ' + m + '</div>';
+  html += '<div>kwadraty: a^2 = ' + k.a2 + ' , b^2 = ' + k.b2 + '</div>';
+  html += '<div>reszta z dzielenia a % b = ' + (isNaN(mod)? 'nieokreślona (dzielenie przez 0)': mod) + '</div>';
+
+  el.innerHTML = html;
+}
+
+function clearOut(){ document.getElementById('out').innerHTML = ''; }
+  </textarea>
+</body>
+</html>

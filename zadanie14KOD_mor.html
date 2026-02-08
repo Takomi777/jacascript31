@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head><meta charset="utf-8"><title>Zadanie 14 - KOD</title></head>
+<body>
+<h2>Zadanie 14 - KOD (Morawski)</h2>
+<textarea cols="80" rows="18" readonly>
+// Rozkład na 3 ułamki egipskie (algorytm zachłanny)
+function egyptianFractionNumerators(m, maxTerms) {
+  var terms = [];
+  var num = 1, den = m;
+  while (num !== 0 && terms.length < maxTerms) {
+    var x = Math.ceil(den / num);
+    terms.push(x);
+    num = num * x - den;
+    den = den * x;
+    var g = function gcd(a,b){return b?gcd(b,a%b):a}(num,den);
+    if (g>0){ num/=g; den/=g; }
+  }
+  return terms;
+}
+var m = parseInt(prompt('Podaj m (np.4):','4'),10);
+var terms = egyptianFractionNumerators(m,3);
+document.write('1/' + m + ' = ' + terms.map(x=>'1/'+x).join(' + '));
+</textarea>
+</body>
+</html>

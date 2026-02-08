@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head><meta charset="utf-8"><title>Zadanie 12 - Morawski</title></head>
+<body>
+<h2>Zadanie 12 - Morawski</h2>
+<script>
+var D1 = parseInt(prompt("D1 (dzień stycznia)", "30"),10);
+var G1 = parseInt(prompt("G1 (godzina 0-23)", "4"),10);
+var D2 = parseInt(prompt("D2 (dzień stycznia)", "28"),10);
+var G2 = parseInt(prompt("G2 (godzina 0-23)", "22"),10);
+var totalSeconds = ((D1 - D2) * 24 + (G1 - G2)) * 3600;
+document.write('<div style="color:green;font-size:48px;">');
+document.write('D1=' + D1 + ' G1=' + G1 + ' D2=' + D2 + ' G2=' + G2 + '<br>');
+document.write('Ilość sekund = ' + totalSeconds + ' sekund');
+document.write('</div>');
+</script>
+</body>
+</html>
